@@ -2,22 +2,15 @@
 METODOS  DE STRINGS:
 fromCharCode()
 El método String.fromCharCode() convierte valores Unicode en caracteres.
-El método codePointAt() devuelve el valor Unicode en un índice (posición) en una cadena.
-El índice de la primera posición es 0, el segundo es 1, ....
+concat()
 String.fromCharCode() es un método estático del objeto String.
-El método charCodeAt() devuelve el Unicode del carácter en un índice especificado (posición) en una cadena.
-El índice del primer carácter es 0, el segundo es 1, ....
-El índice del último carácter es la longitud de la cadena - 1
+El método concat() une dos o más cadenas.
 La sintaxis siempre es String.fromCharCode().
-Diferencia entre codePointAt & charCodeAt()
-charCodeAt() es UTF-16, codePointAt() es Unicode.
-charCodeAt() devuelve un número entre 0 y 65535.
-Ambos métodos devuelven un número entero que representa el código UTF-16 de un carácter, pero solo codePointAt() puede devolver el valor completo de un valor Unicode mayor que 0xFFFF (65535). 
+El método concat() no cambia las cadenas existentes.
 No se puede usar myString.fromCharCode().
- */
+El método concat() devuelve una nueva cadena.
 
-//Ejemplo de ambas:
-let ejemplo = "Yisus"
-let code= ejemplo.codePointAt(0); //esto me votaria 89 ya que es el codigo en el utf-8 del caracter que esta en esta posicion, o sea la letra "Y"
-let code2= ejemplo.charCodeAt(3); //esto me votaria 117 ya que es el codigo en el utf-8 del caracter que esta en esta posicion, o sea la letra "U"
-let hola = String.fromCharCode(72, 69, 76, 76, 79); //esto va a mostrar el mensaje "HELLO", siendo el 72 la "H", el 69 la "E", el 76 la "L" y el 79 la "O"
+*/let hola = String.fromCharCode(72, 69, 76, 76, 79); //esto va a mostrar el mensaje "HELLO", siendo el 72 la "H", el 69 la "E", el 76 la "L" y el 79 la "O"
+let texto1 = "Hola";
+let texto2 = "Mundo";
+let frase = texto1.concat(" ", texto2); 
