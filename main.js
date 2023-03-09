@@ -1,12 +1,12 @@
-/* Math.ceil()
+/* Math.floor()
 
-El método Math.ceil() redondea un número redondeado hacia arriba al entero más cercano.
-Muy importante el redondeadfo hacia ARRIBA, no aplica que tan cerca esté el numero del siguiente para definirlo arriba o abajo
+El método Math.floor() redondea un número HACIA ABAJO al entero más cercano.
+Lo mismo que en ceil, solo que aca redondea hacia ABAJO
 
 */
-let a = Math.ceil(0.60);//1 
-let b = Math.ceil(0.40);// 1
+let a = Math.ceil(0.60);//0
+let b = Math.ceil(0.40);// 0
 let c = Math.ceil(5);// 5
-let d = Math.ceil(5.1);// 6 
-let e = Math.ceil(-5.1);//-5
-let f = Math.ceil(-5.9);//-5
+let d = Math.ceil(5.1);// 5 
+let e = Math.ceil(-5.1);//-6
+let f = Math.ceil(-5.9);//-6
