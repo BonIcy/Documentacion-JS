@@ -1,45 +1,32 @@
-/* 
-METODOS  DE STRINGS:
-slice () substr() substring() split()
-El método slice() extrae una parte de una cadena.
-El método slice() devuelve la parte extraída en una nueva cadena.
-El método slice() no cambia la cadena original.
-Los parámetros de inicio y fin especifican la parte de la cadena que se va a extraer.
-La primera posición es 0, la segunda es 1, ...
-Un número negativo selecciona desde el final de la cadena.
-El método substr() extrae una parte de una cadena.
-El método substr() comienza en una posición específica y devuelve un número específico de caracteres.
-El método substr() no cambia la cadena original.
-Para extraer caracteres del final de la cadena, utilice una posición inicial negativa.
-El método substring() extrae caracteres, entre dos índices (posiciones), de una cadena y devuelve la subcadena.
-El método substring() extrae caracteres de principio a fin (exclusivo).
-El método substring() no cambia la cadena original.
-Si el inicio es mayor que el final, los argumentos se intercambian: (4, 1) = (1, 4).
-Los valores iniciales o finales inferiores a 0 se tratan como 0.
-El método split() divide una cadena en una matriz de subcadenas.
-El método split() devuelve la nueva matriz.
-El método split() no cambia la cadena original.
-Si (" ") se usa como separador, la cadena se divide entre palabras.
-*/
-let textt = "Hello world!";
-let resultt = textt.slice(0, 5); //muestra Hello!
-let resulttt = textt.slice(3);  //muestra lo World!
+/* Operadores de comparación
+Operador 	                                Condición probada 	                                                                   Ejemplos
+= (Igualdad) 	             ¿Es el valor de la primera expresión igual al valor de la segunda?      	                        23 = 33 ' False
 
-let text = "Hello world!";
-let result = text.substr(1, 4); //deberia mostrar ello
-let resultw = text.substr(2); //deberia mostrar llo World!
+                                                                                                                                23 = 23 ' True
 
-let texta = "Hello world!";
-let resulta = texta.substring(1, 4); //mustra ell
-let resultaa = texta.substring(2); // muestra llo world!
+                                                                                                                                23 = 12 ' False
+<> (Desigualdad) 	        ¿Es el valor de la primera expresión desigual al valor de la segunda? 	                            23 <> 33 ' True
 
-let texti = "How are you doing today?";
-const myArray = texti.split(" "); //divide una cadena en una array de subcadenas y devuelve la array: How,are,you,doing,today?
+                                                                                                                                23 <> 23 ' False
 
-let texte = "How are you doing today?";
-const myArrayy = texte.split(" ");
-let word = myArrayy[1]; //la palabra en la posicion 1 es "are", asi que eso muestra
+                                                                                                                                23 <> 12 ' True
+< (Menor que) 	            ¿Es el valor de la primera expresión menor que el valor de la segunda? 	23 < 33 ' True
 
-let textu = "How are you";
-const myArraye = textu.split(""); // reemplaza espacios  How,are,you
-const myArrayee = textu.split(" ", 2); //usa el parametro de limite : How,are 
+                                                                                                                                23 < 23 ' False
+
+                                                                                                                                23 < 12 ' False 
+> (Mayor que) 	           ¿Es el valor de la primera expresión mayor que el valor de la segunda? 	23 > 33 ' False
+
+                                                                                                                                23 > 23 ' False
+
+                                                                                                                                23 > 12 ' True
+<= (Menor o igual que) 	    ¿Es el valor de la primera expresión menor o igual que el valor de la segunda? 	                        23 <= 33 ' True
+
+                                                                                                                                23 <= 23 ' True
+
+                                                                                                                                23 <= 12 ' False    
+>= (Mayor o igual que)  	¿Es el valor de la primera expresión mayor o igual que el valor de la segunda? 	23 >= 33 ' False
+
+                                                                                                                                23 >= 23 ' True
+
+                                                                                                                                23 >= 12 ' True */
