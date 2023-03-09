@@ -1,9 +1,9 @@
-/*  
-Operador                Operación           Expresión de muestra
-- 	                    Negación 	                -X
-^  **                  Exponenciación 	       X ^ Y // X ** Y
-*                      Multiplicación               X*Y
-/                        División                   X/Y
-+                          Suma                     X+Y
--                       Sustracción                 X-Y
+/* Math.PI
+
+Math.PI es una característica de ECMAScript1 (ES1).
+
+ES1 (JavaScript 1997) es totalmente compatible con todos los navegadores:
+
 */
+
+let x = Math.PI; // define a x como numero PI 3.141592653589793
