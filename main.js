@@ -1,11 +1,12 @@
-/* Math.sqrt()
+/* Math.ceil()
 
-El método Math.sqrt() devuelve la raíz cuadrada de un número.
+El método Math.ceil() redondea un número redondeado hacia arriba al entero más cercano.
+Muy importante el redondeadfo hacia ARRIBA, no aplica que tan cerca esté el numero del siguiente para definirlo arriba o abajo
 
 */
-let x = Math.sqrt(9);// aqui saca el numero 3 ya que es la raiz de 9
-let a = Math.sqrt(0); //0
-let b = Math.sqrt(1); //1
-let c = Math.sqrt(9); //3
-let d = Math.sqrt(64); //8
-let e = Math.sqrt(-9); //NaN
+let a = Math.ceil(0.60);//1 
+let b = Math.ceil(0.40);// 1
+let c = Math.ceil(5);// 5
+let d = Math.ceil(5.1);// 6 
+let e = Math.ceil(-5.1);//-5
+let f = Math.ceil(-5.9);//-5
