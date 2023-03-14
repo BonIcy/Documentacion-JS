@@ -1,9 +1,17 @@
 /* 
-FUNCIONES
+FUNCIONES:
 
-Funciones como objetos
+La diferencia fundamental entre las funciones por declaración y las funciones por expresión es que estas últimas sólo están disponibles a partir de la inicialización de la variable. Si «ejecutamos la variable» antes de declararla, nos dará un error.
+Funciones anónimas
 
-Como curiosidad, debes saber que se pueden declarar funciones como si fueran objetos. Sin embargo, es un enfoque que no se suele utilizar en producción. Simplemente es interesante saberlo para darse cuenta que en Javascript todo pueden ser objetos:*/
+Las funciones anónimas o funciones lambda son un tipo de funciones que se declaran sin nombre de función y se alojan en el interior de una variable y haciendo referencia a ella cada vez que queramos utilizarla:*/
 
-const saludar = new Function("return 'Hola';");
-saludar(); // 'Hola'
+// Función anónima "saludo"
+const saludo = function () {
+  return "Hola";
+};
+
+saludo; // ƒ () { return 'Hola'; }
+saludo(); // 'Hola'
+/*
+Observa que en la última línea del ejemplo anterior, estamos ejecutando la variable, es decir, ejecutando la función que contiene la variable. Sin embargo, en la línea anterior hacemos referencia a la variable (sin ejecutarla, no hay paréntesis) y nos devuelve la función en sí.*/
