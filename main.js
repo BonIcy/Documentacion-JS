@@ -1,30 +1,36 @@
 /* 
 FUNCIONES:
-Arrow functions
+Ámbito léxico de this
 
-Las Arrow functions, funciones flecha o «fat arrow» son una forma corta de escribir funciones que aparece en Javascript a partir de ECMAScript 6. Básicamente, se trata de reemplazar eliminar la palabra function y añadir => antes de abrir las llaves:
-*/
-const funco = function () {
-  return "Función tradicional.";
+Aunque aún no la hemos utilizado, una de las principales diferencias de las funciones flecha respecto a las funciones tradicionales, es el valor de la palabra clave this, que no siempre es la misma.
+
+Por ejemplo, si utilizamos una función de forma global en nuestro programa, no notaremos ninguna diferencia:*/
+
+// Si son funciones globales
+const a = function () {
+  console.log(this);
+};
+const b = () => {
+  console.log(this);
 };
 
-const funci = () => {
-  return "Función flecha.";
+a(); // Window
+b(); // Window
+
+/*Sin embargo, si utilizamos una función en el interior de un objeto, como suele ser el caso más habitual, si encontraremos diferencias. Observa que en la primera función, donde se utiliza una función tradicional, el this devuelve el objeto padre de la función.
+
+Por otro lado, en la segunda función, donde se utiliza una función flecha, el this no devuelve el objeto padre de la función, sino que devuelve Window.*/
+
+padre = {
+  a: function () {
+    console.log(this);
+  },
+  b: () => {
+    console.log(this);
+  },
 };
-/*
-Sin embargo, las funciones flechas tienen algunas ventajas a la hora de simplificar código bastante interesantes:
 
-    Si el cuerpo de la función sólo tiene una línea, podemos omitir las llaves ({}).
-    Además, en ese caso, automáticamente se hace un return de esa única línea, por lo que podemos omitir también el return.
-    En el caso de que la función no tenga parámetros, se indica como en el ejemplo anterior: () =>.
-    En el caso de que la función tenga un solo parámetro, se puede indicar simplemente el nombre del mismo: e =>.
-    En el caso de que la función tenga 2 ó más parámetros, se indican entre paréntesis: (a, b) =>.
-    Si queremos devolver un objeto, que coincide con la sintaxis de las llaves, se puede englobar con paréntesis: ({name: 'Manz'}).
-
-Por lo tanto, el ejemplo anterior se puede simplificar aún más:
-*/
-const funca = () => "Función flecha."; // 0 parámetros: Devuelve "Función flecha"
-const funce = (e) => e + 1; // 1 parámetro: Devuelve el valor de e + 1
-const func = (a, b) => a + b; // 2 parámetros: Devuelve el valor de a + b
+padre.a(); // padre
+padre.b(); // Window
 /*
-Las funciones flecha hacen que el código sea mucho más legible y claro de escribir, mejorando la productividad y la claridad a la hora de escribir código.*/
+Esta es una diferencia clave que hay que tener bien en cuenta a la hora de trabajar con las funciones flecha. Una buena práctica es utilizar funciones tradicionales como las funciones de primer nivel y, luego, en su interior o en callbacks, utilizar funciones flecha.*/
