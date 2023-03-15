@@ -1,36 +1,41 @@
 /* 
-FUNCIONES:
-Ámbito léxico de this
+Object.entries() & Object.entries
 
-Aunque aún no la hemos utilizado, una de las principales diferencias de las funciones flecha respecto a las funciones tradicionales, es el valor de la palabra clave this, que no siempre es la misma.
-
-Por ejemplo, si utilizamos una función de forma global en nuestro programa, no notaremos ninguna diferencia:*/
-
-// Si son funciones globales
-const a = function () {
-  console.log(this);
-};
-const b = () => {
-  console.log(this);
+ES6 presenta el método Object.entries() que le permite transformar un objeto en una matriz:*/
+const boxStyle = {
+  color: 'red',
+  borderWidth: '1px'
 };
 
-a(); // Window
-b(); // Window
+let arr = Object.entries(boxStyle);
+console.log(arr); //se muestra [['color', 'red'],['borderWidth', '1px']]
+/*Pero, ¿qué pasaría si quisiera hacer lo contrario y convertir una lista de pares clave-valor en un objeto?
 
-/*Sin embargo, si utilizamos una función en el interior de un objeto, como suele ser el caso más habitual, si encontraremos diferencias. Observa que en la primera función, donde se utiliza una función tradicional, el this devuelve el objeto padre de la función.
+ES2019 introdujo el método Object.fromEntries() que le permite convertir fácilmente una lista de pares clave-valor en un objeto.*/
+let arre = [['color', 'red'],['borderWidth', '1px']];
+let obj = Object.fromEntries(arre); // muestra {color: "red", borderWidth: "1px"}
 
-Por otro lado, en la segunda función, donde se utiliza una función flecha, el this no devuelve el objeto padre de la función, sino que devuelve Window.*/
+/*1) Convertir una array en un objeto*/
+const arra = [
+  ['firstName', 'John'],
+  ['lastName', 'Doe'],
+  ['age', 20]
+];
 
-padre = {
-  a: function () {
-    console.log(this);
-  },
-  b: () => {
-    console.log(this);
-  },
-};
+const person = Object.fromEntries(arra);
+console.log(person); // muestra {firstName: "John", lastName: "Doe", age: 20}
 
-padre.a(); // padre
-padre.b(); // Window
-/*
-Esta es una diferencia clave que hay que tener bien en cuenta a la hora de trabajar con las funciones flecha. Una buena práctica es utilizar funciones tradicionales como las funciones de primer nivel y, luego, en su interior o en callbacks, utilizar funciones flecha.*/
+/*2) Convertir un mapa en objeto*/
+const config = new Map();
+
+config.set('type', 'database');
+config.set('duration', 30);
+
+const cache = Object.fromEntries(config);
+console.log(cache); // se muestra {type: "database", duration: 30}
+
+/*3) Convertir una cadena de parámetros de URL en un objeto*/
+const params = 'type=listing&page=2&rowCount=10';
+const searchParams = new URLSearchParams(params);
+
+console.log(Object.fromEntries(searchParams)); //se muestra {type: "listing", page: "2", rowCount: "10"}
